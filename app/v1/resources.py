@@ -36,6 +36,7 @@ class RepositoriesResource(Resource):
     """
 
     def get(self):
+        import remote_pdb; remote_pdb.set_trace('0.0.0.0', 4444)
         args = self.create_parser().parse_args()
         repositories = Repository.objects.all()
         if args['sort_by_stars']:

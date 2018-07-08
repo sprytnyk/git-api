@@ -1,18 +1,22 @@
 version: '2'
 
 services:
-  main:
+  backend:
     build: .
     command: >
       gunicorn -b 0.0.0.0:5005
         --worker-class eventlet
         --access-logfile -
         --reload
+        --timeout 600
         "manage:app"
     volumes:
-      - .:/app
+      - .:/project
     ports:
       - 5005:5005
+      - 4444:4444
+    stdin_open: true
+    tty: true
 
   redis:
     image: redis
@@ -26,7 +30,7 @@ services:
     build: .
     command: celery worker -l info -P eventlet -A manage.celery
     volumes:
-      - .:/app
+      - .:/project
 
   flower:
     build: .
@@ -34,7 +38,7 @@ services:
     ports:
       - 5555:5555
     volumes:
-      - .:/app
+      - .:/project
 
   mongo:
     image: mongo:latest

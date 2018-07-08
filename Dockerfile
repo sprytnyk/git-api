@@ -3,8 +3,8 @@ FROM python:3.6
 ENV PYTHONUNBUFFERED 1
 
 # Copy app data
-COPY . /app
-WORKDIR /app
+COPY . /project
+WORKDIR /project
 
 # Install Python packages
 RUN pip install -r requirements.txt

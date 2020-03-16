@@ -1,7 +1,6 @@
 # Kickstart
 To bootstrap project, just run docker-compose inside root directory with docker-compose.yml. E.g.:
 ```sh
-cd ~/Sites/challenge-backend 
 docker-compose up
 ```
 Then go to http://localhost:5005 to be able to see what's going out.

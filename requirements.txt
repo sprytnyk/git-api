@@ -21,6 +21,7 @@ Jinja2==2.10
 kombu==4.1.0
 MarkupSafe==1.0
 mongoengine==0.15.0
+pdbpp==0.10.2
 pymongo==3.6.1
 pytz==2018.4
 redis==2.10.6

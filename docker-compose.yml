@@ -3,13 +3,7 @@ version: '2'
 services:
   backend:
     build: .
-    command: >
-      gunicorn -b 0.0.0.0:5005
-        --worker-class eventlet
-        --access-logfile -
-        --reload
-        --timeout 600
-        "manage:app"
+    command: ./bin/entrypoint.sh
     volumes:
       - .:/project
     ports:
@@ -47,7 +41,7 @@ services:
       - MONGO_LOG_DIR=/dev/null
     volumes:
       - mongo:/data/db
-    command: mongod --smallfiles --logpath=/dev/null # --quiet
+    command: mongod  --logpath=/dev/null # --quiet
     ports:
       - 27017:27017
 

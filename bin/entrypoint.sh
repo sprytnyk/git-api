@@ -10,5 +10,5 @@ class Config(pdb.DefaultConfig):
 EOF
 
 # run backend container
-gunicorn -b 0.0.0.0:5005 --worker-class eventlet --access-logfile - \
---reload --timeout 600 "manage:app"
+gunicorn -b 0.0.0.0:5005 --worker-class eventlet \
+--log-level CRITICAL --reload --timeout 600 "manage:app"

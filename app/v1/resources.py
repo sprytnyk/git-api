@@ -36,6 +36,10 @@ class RepositoriesResource(Resource):
     """
 
     def get(self):
+        # Or
+        # import pdb; pdb.set_trace()
+        # and then from terminal:
+        # $ docker attach git-api_backend_1
         import remote_pdb; remote_pdb.set_trace('0.0.0.0', 4444)
         args = self.create_parser().parse_args()
         repositories = Repository.objects.all()

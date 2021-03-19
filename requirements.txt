@@ -17,7 +17,7 @@ greenlet==0.4.13
 gunicorn==19.8.1
 idna==2.6
 itsdangerous==0.24
-Jinja2==2.10
+Jinja2==2.11.3
 kombu==4.1.0
 mongoengine==0.15.0
 pdbpp==0.10.2
